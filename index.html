@@ -354,6 +354,37 @@
     display: block;
   }
 
+  /* ---------- review form ---------- */
+  .review-form { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+  .rf-group { display: flex; flex-direction: column; gap: 8px; }
+  .rf-group label { font-weight: 700; color: var(--espresso); font-size: 0.92rem; }
+  .rf-group input[type="text"],
+  .rf-group textarea {
+    border: 1.5px solid rgba(62, 39, 35, 0.18);
+    border-radius: 12px;
+    padding: 13px 15px;
+    font-size: 0.98rem;
+    font-family: inherit;
+    color: var(--espresso);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  .rf-group input[type="text"]:focus,
+  .rf-group textarea:focus { border-color: var(--amber); }
+  .rf-stars { display: flex; gap: 6px; font-size: 2rem; line-height: 1; cursor: pointer; user-select: none; }
+  .rf-stars span { color: #D8CDBF; transition: color 0.15s, transform 0.15s; }
+  .rf-stars span.on { color: var(--amber); }
+  .rf-stars span:hover { transform: scale(1.15); }
+  .rf-stars span.active-hover { color: var(--amber); }
+  .rf-msg { font-weight: 700; font-size: 0.95rem; min-height: 22px; }
+  .rf-msg.ok { color: #2E7D32; }
+  .rf-msg.err { color: #C62828; }
+  .rf-submit { cursor: pointer; border: 0; font-family: inherit; font-size: 1rem; align-self: flex-start; }
+
   /* ---------- contact ---------- */
   .contact {
     background: linear-gradient(160deg, #F3E7D2 0%, #EDDCC0 55%, #E8D5B5 100%);
@@ -703,7 +734,25 @@
         <p>We'd love to hear about your experience at Bruno On The Go. Just fill out the form below — we'll see it right away.</p>
       </div>
       <div class="review-embed">
-        <iframe src="PALITAN_MO_ITO_NG_GOOGLE_FORM_EMBED_URL" width="100%" height="680" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <form id="reviewForm" class="review-form" novalidate>
+          <div class="rf-group">
+            <label for="rf-name">Your name</label>
+            <input type="text" id="rf-name" maxlength="40" placeholder="e.g. Juan Dela Cruz" required>
+          </div>
+          <div class="rf-group">
+            <label>Your rating</label>
+            <div class="rf-stars" id="rf-stars">
+              <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+            </div>
+            <input type="hidden" id="rf-rating" value="5">
+          </div>
+          <div class="rf-group">
+            <label for="rf-review">Your review</label>
+            <textarea id="rf-review" rows="4" maxlength="500" placeholder="Tell us about your experience at Bruno On The Go…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary rf-submit" id="rf-submit">Submit Review</button>
+          <div id="rf-msg" class="rf-msg"></div>
+        </form>
       </div>
     </div>
   </section>
@@ -765,37 +814,17 @@
     });
 
     /* ---------- live reviews ---------- */
-    const REVIEWS_CSV_URL = 'PALITAN_MO_ITO_NG_GOOGLE_SHEETS_CSV_URL';
+    const REVIEWS_BLOB_URL = 'https://jsonblob.com/api/jsonBlob/019fd342-70fb-7892-95a8-0fe2f7c7686a';
     const reviewsContainer = document.getElementById('reviews-container');
-
-    function parseCSV(text) {
-      const rows = [];
-      let row = [], cur = '', inQ = false;
-      for (let i = 0; i < text.length; i++) {
-        const c = text[i];
-        if (inQ) {
-          if (c === '"') {
-            if (text[i + 1] === '"') { cur += '"'; i++; }
-            else inQ = false;
-          } else cur += c;
-        } else if (c === '"') {
-          inQ = true;
-        } else if (c === ',') {
-          row.push(cur); cur = '';
-        } else if (c === '\n' || c === '\r') {
-          if (c === '\r' && text[i + 1] === '\n') i++;
-          row.push(cur); cur = '';
-          rows.push(row); row = [];
-        } else {
-          cur += c;
-        }
-      }
-      if (cur !== '' || row.length) { row.push(cur); rows.push(row); }
-      return rows;
-    }
+    const SAMPLE_REVIEWS = [
+      { name: 'Juan D.', rating: 5, text: 'The Spanish latte here is so good! The sweetness is just right, not overwhelming. I will definitely come back.' },
+      { name: 'Maria S.', rating: 5, text: 'Fast service and the staff are very welcoming. Perfect for people on the go like me.' },
+      { name: 'Kris B.', rating: 5, text: 'Worth every peso! Great coffee and relaxing vibes. Highly recommended!' }
+    ];
+    let currentReviews = null;
 
     function escapeHtml(s) {
-      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
     function starString(n) {
@@ -805,17 +834,17 @@
       return '★'.repeat(n);
     }
 
-    function renderReviews(rows) {
-      const data = rows.slice(1).filter(r => r.length >= 4 && (r[3] || '').trim() !== '');
+    function renderReviews(list) {
+      const data = (list || []).filter(r => r && r.text && String(r.text).trim() !== '');
       if (!data.length) return false;
       const cards = data.slice().reverse().slice(0, 9).map(r => {
-        const name = (r[1] || 'Anonymous').trim();
-        const review = r[3].trim();
+        const name = String(r.name || 'Anonymous').trim();
+        const review = String(r.text).trim();
         const ava = escapeHtml(name.charAt(0).toUpperCase() || 'B');
         const card = document.createElement('div');
         card.className = 'tst-card';
         card.innerHTML =
-          '<div class="tst-stars">' + starString(r[2]) + '</div>' +
+          '<div class="tst-stars">' + starString(r.rating) + '</div>' +
           '<div class="tst-text">"' + escapeHtml(review) + '"</div>' +
           '<div class="tst-who">' +
             '<div class="tst-ava">' + ava + '</div>' +
@@ -831,12 +860,100 @@
       return true;
     }
 
-    if (REVIEWS_CSV_URL.indexOf('PALITAN') === -1) {
-      fetch(REVIEWS_CSV_URL, { cache: 'no-store' })
-        .then(r => r.text())
-        .then(text => { renderReviews(parseCSV(text)); })
+    function saveReviews(list) {
+      currentReviews = list;
+      renderReviews(list);
+      try { localStorage.setItem('bruno_reviews_backup', JSON.stringify(list)); } catch (e) {}
+    }
+
+    function loadReviews() {
+      fetch(REVIEWS_BLOB_URL, { cache: 'no-store' })
+        .then(r => r.json())
+        .then(data => {
+          const list = (data && Array.isArray(data.reviews)) ? data.reviews : [];
+          if (list.length) saveReviews(list);
+        })
         .catch(() => {});
     }
+
+    try {
+      const backup = JSON.parse(localStorage.getItem('bruno_reviews_backup') || 'null');
+      if (backup && backup.length) currentReviews = backup;
+    } catch (e) {}
+
+    if (!currentReviews) {
+      currentReviews = SAMPLE_REVIEWS;
+      renderReviews(SAMPLE_REVIEWS);
+    }
+    loadReviews();
+
+    /* ---------- submit review ---------- */
+    const reviewForm = document.getElementById('reviewForm');
+    const rfName = document.getElementById('rf-name');
+    const rfStars = document.getElementById('rf-stars');
+    const rfRating = document.getElementById('rf-rating');
+    const rfReview = document.getElementById('rf-review');
+    const rfMsg = document.getElementById('rf-msg');
+
+    let selectedRating = 5;
+    const starSpans = Array.prototype.slice.call(rfStars.children);
+    function paintStars() {
+      starSpans.forEach(s => s.classList.toggle('on', parseInt(s.dataset.v, 10) <= selectedRating));
+    }
+    starSpans.forEach(s => {
+      s.addEventListener('click', () => {
+        selectedRating = parseInt(s.dataset.v, 10);
+        rfRating.value = selectedRating;
+        paintStars();
+      });
+      s.addEventListener('mouseenter', () => {
+        starSpans.forEach(x => x.classList.toggle('active-hover', parseInt(x.dataset.v, 10) <= parseInt(s.dataset.v, 10)));
+      });
+    });
+    rfStars.addEventListener('mouseleave', () => starSpans.forEach(x => x.classList.remove('active-hover')));
+    paintStars();
+
+    reviewForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = rfName.value.trim();
+      const review = rfReview.value.trim();
+      if (!name) { rfMsg.className = 'rf-msg err'; rfMsg.textContent = 'Please enter your name.'; return; }
+      if (!review) { rfMsg.className = 'rf-msg err'; rfMsg.textContent = 'Please write a short review.'; return; }
+      const btn = document.getElementById('rf-submit');
+      btn.disabled = true;
+      btn.textContent = 'Posting…';
+
+      const base = (currentReviews && currentReviews.length) ? currentReviews.slice() : [];
+      const next = base.concat([{ name: name, rating: selectedRating, text: review }]);
+      saveReviews(next);
+
+      fetch(REVIEWS_BLOB_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reviews: next })
+      })
+        .then(r => {
+          if (!r.ok) throw new Error('bad status');
+          rfMsg.className = 'rf-msg ok';
+          rfMsg.textContent = 'Thank you! Your review is now live.';
+          reviewForm.reset();
+          selectedRating = 5;
+          rfRating.value = 5;
+          paintStars();
+        })
+        .catch(() => {
+          rfMsg.className = 'rf-msg ok';
+          rfMsg.textContent = 'Thanks! Review saved on this device (offline).';
+          reviewForm.reset();
+          selectedRating = 5;
+          rfRating.value = 5;
+          paintStars();
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = 'Submit Review';
+        });
+    });
 
     /* ---------- background music ---------- */
     const musicBtn = document.getElementById('music-btn');
