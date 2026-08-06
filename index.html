@@ -452,6 +452,17 @@
     font-size: 0.72rem;
     white-space: nowrap;
   }
+  .info-card .c-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(62,39,35,0.35);
+    transition: color 0.2s, text-decoration-color 0.2s;
+  }
+  .info-card .c-link:hover {
+    color: var(--espresso);
+    text-decoration-color: var(--amber);
+  }
 
   /* ---------- footer ---------- */
   footer {
@@ -831,12 +842,12 @@
         <div class="info-card">
           <div class="ic">📞</div>
           <h4>Contact</h4>
-          <p>0951-544-1236<br><span class="email">melbournesabroso611@gmail.com</span></p>
+          <p><a class="c-link" href="tel:+639515441236">0951-544-1236</a><br><a class="c-link email" href="mailto:melbournesabroso611@gmail.com">melbournesabroso611@gmail.com</a></p>
         </div>
         <div class="info-card">
           <div class="ic">📱</div>
           <h4>Social Media</h4>
-          <p>FB: Bruno On The Go<br>IG: Brun_oonthego</p>
+          <p><a class="c-link" href="https://www.facebook.com/profile.php?id=61592581610788" target="_blank" rel="noopener">FB: Bruno On The Go</a><br><a class="c-link" href="https://www.instagram.com/brun_oonthego" target="_blank" rel="noopener">IG: Brun_oonthego</a></p>
         </div>
       </div>
     </div>
