@@ -717,6 +717,33 @@
   .o-msg { margin-top: 12px; font-size: 0.8rem; color: #6B5347; text-align: center; min-height: 20px; }
   .o-msg.ok { color: #2E7D32; font-weight: 700; }
 
+  /* ---------- free shipping promo bar ---------- */
+  .promo-bar {
+    background: linear-gradient(90deg, var(--espresso), var(--coffee));
+    color: #FFF8EE;
+    text-align: center;
+    padding: 13px 20px;
+    border-bottom: 1px solid rgba(233, 176, 75, 0.35);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+  }
+  .promo-bar .truck { color: var(--amber); margin-right: 8px; }
+  .promo-bar .free {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--espresso);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-right: 8px;
+    vertical-align: 2px;
+  }
+  .promo-bar .ship { color: var(--amber); font-weight: 800; }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal, .menu-card, .menu-img img, .menu-img::after, .best-badge, .menu-card.enter, .menu-card.lit .menu-img::after {
@@ -729,6 +756,12 @@
 </style>
 </head>
 <body id="top">
+
+  <div class="promo-bar">
+    <span class="truck">&#128666;</span>
+    <span class="free">Free Shipping</span>
+    on minimum 3 orders &mdash; <span class="ship">Masantol area only</span>
+  </div>
 
   <nav>
     <div class="nav-inner">
