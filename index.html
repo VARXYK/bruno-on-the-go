@@ -286,6 +286,15 @@
   }
   .menu-card:hover .menu-img::after { transform: translateX(320%) skewX(-18deg); }
 
+  @keyframes shineSweep {
+    0% { transform: translateX(-180%) skewX(-18deg); opacity: 0; }
+    12% { opacity: 1; }
+    65% { opacity: 1; }
+    100% { transform: translateX(320%) skewX(-18deg); opacity: 0; }
+  }
+  .menu-card.lit .menu-img::after { animation: shineSweep 0.9s ease backwards; }
+  .menu-card.lit .menu-img::after { animation-delay: var(--rd, 0ms); }
+
   .best-badge {
     position: absolute;
     top: 12px;
@@ -510,7 +519,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal, .menu-card, .menu-img img, .menu-img::after, .best-badge, .menu-card.enter {
+    .reveal, .menu-card, .menu-img img, .menu-img::after, .best-badge, .menu-card.enter, .menu-card.lit .menu-img::after {
       animation: none !important;
       transition: none !important;
       transform: none !important;
@@ -1041,7 +1050,14 @@
     const revealEls = document.querySelectorAll('.sec-head, .about-grid, .tst-grid, .contact-grid');
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          e.target.classList.remove('lit');
+          void e.target.offsetWidth;
+          e.target.classList.add('lit');
+        } else {
+          e.target.classList.remove('lit');
+        }
       });
     }, { threshold: 0.01 });
     revealEls.forEach(el => {
