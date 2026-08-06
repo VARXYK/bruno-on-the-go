@@ -773,12 +773,43 @@
     </div>
   </section>
 
+  <section id="review-form">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Leave a Review</div>
+        <h2>Leave Us a Review</h2>
+        <p>We'd love to hear about your experience at Bruno On The Go. Just fill out the form above — we'll see it right away.</p>
+      </div>
+      <div class="review-embed">
+        <form id="reviewForm" class="review-form" novalidate>
+          <div class="rf-group">
+            <label for="rf-name">Your name</label>
+            <input type="text" id="rf-name" maxlength="40" placeholder="e.g. Juan Dela Cruz" required>
+          </div>
+          <div class="rf-group">
+            <label>Your rating</label>
+            <div class="rf-stars" id="rf-stars">
+              <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+            </div>
+            <input type="hidden" id="rf-rating" value="5">
+          </div>
+          <div class="rf-group">
+            <label for="rf-review">Your review</label>
+            <textarea id="rf-review" rows="4" maxlength="500" placeholder="Tell us about your experience at Bruno On The Go…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary rf-submit" id="rf-submit">Submit Review</button>
+          <div id="rf-msg" class="rf-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <section id="testimonials" style="background:#FDF9F0;">
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-eyebrow">Reviews</div>
         <h2>What Our Customers Say</h2>
-        <p>Real reviews from our customers — submitted through the form below.</p>
+        <p>Real reviews from our customers — submitted through the form above.</p>
       </div>
       <div class="tst-grid" id="reviews-container">
         <div class="tst-card">
@@ -814,37 +845,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="review-form">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-eyebrow">Leave a Review</div>
-        <h2>Leave Us a Review</h2>
-        <p>We'd love to hear about your experience at Bruno On The Go. Just fill out the form below — we'll see it right away.</p>
-      </div>
-      <div class="review-embed">
-        <form id="reviewForm" class="review-form" novalidate>
-          <div class="rf-group">
-            <label for="rf-name">Your name</label>
-            <input type="text" id="rf-name" maxlength="40" placeholder="e.g. Juan Dela Cruz" required>
-          </div>
-          <div class="rf-group">
-            <label>Your rating</label>
-            <div class="rf-stars" id="rf-stars">
-              <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
-            </div>
-            <input type="hidden" id="rf-rating" value="5">
-          </div>
-          <div class="rf-group">
-            <label for="rf-review">Your review</label>
-            <textarea id="rf-review" rows="4" maxlength="500" placeholder="Tell us about your experience at Bruno On The Go…" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary rf-submit" id="rf-submit">Submit Review</button>
-          <div id="rf-msg" class="rf-msg"></div>
-        </form>
       </div>
     </div>
   </section>
