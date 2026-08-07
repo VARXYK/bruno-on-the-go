@@ -1195,7 +1195,7 @@
     function renderReviews(list) {
       const data = (list || []).filter(r => r && r.text && String(r.text).trim() !== '');
       if (!data.length) return false;
-      const cards = data.slice().reverse().slice(0, 9).map(r => {
+      const cards = data.slice().reverse().map(r => {
         const name = String(r.name || 'Anonymous').trim();
         const review = String(r.text).trim();
         const ava = escapeHtml(name.charAt(0).toUpperCase() || 'B');
