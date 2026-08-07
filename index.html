@@ -1171,6 +1171,7 @@
     });
 
     /* ---------- live reviews ---------- */
+    const REVIEWS_JSON_URL = 'reviews.json';
     const REVIEWS_BLOB_URL = 'https://jsonblob.com/api/jsonBlob/019fdad6-c5fe-7536-81b2-2c77948dada4';
     const reviewsContainer = document.getElementById('reviews-container');
     const SAMPLE_REVIEWS = [
@@ -1223,14 +1224,33 @@
       try { localStorage.setItem('bruno_reviews_backup', JSON.stringify(list)); } catch (e) {}
     }
 
+    function mergeReviews(baseList, liveList) {
+      const seen = {};
+      const out = [];
+      (baseList || []).concat(liveList || []).forEach(r => {
+        if (!r || !r.text || !String(r.text).trim()) return;
+        const key = (String(r.name || '') + '|' + String(r.text)).toLowerCase().trim();
+        if (seen[key]) return;
+        seen[key] = true;
+        out.push(r);
+      });
+      return out;
+    }
+
     function loadReviews() {
-      fetch(REVIEWS_BLOB_URL, { cache: 'no-store' })
-        .then(r => r.json())
-        .then(data => {
-          const list = (data && Array.isArray(data.reviews)) ? data.reviews : [];
-          if (list.length) saveReviews(list);
-        })
-        .catch(() => {});
+      Promise.all([
+        fetch(REVIEWS_JSON_URL, { cache: 'no-store' })
+          .then(r => r.json())
+          .then(data => (data && Array.isArray(data.reviews)) ? data.reviews : [])
+          .catch(() => []),
+        fetch(REVIEWS_BLOB_URL, { cache: 'no-store' })
+          .then(r => r.json())
+          .then(data => (data && Array.isArray(data.reviews)) ? data.reviews : [])
+          .catch(() => [])
+      ]).then(([base, live]) => {
+        const merged = mergeReviews(base, live);
+        if (merged.length) saveReviews(merged);
+      });
     }
 
     try {
