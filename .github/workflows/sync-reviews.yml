@@ -1,0 +1,56 @@
+name: Auto-sync reviews
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "reviews-sync"
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip on own commit
+        if: github.event_name == 'push' && (github.event.head_commit.author.username == 'github-actions[bot]' || startsWith(github.event.head_commit.message, 'Auto-sync reviews'))
+        run: echo "Skipping run (own commit)."; exit 0
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Merge blob reviews into reviews.json
+        run: node .github/scripts/sync-reviews.js
+
+      - name: Commit & push if changed
+        id: commit
+        run: |
+          git config user.name "bruno-sync-bot"
+          git config user.email "bruno-sync-bot@users.noreply.github.com"
+          git add reviews.json
+          if git diff --cached --quiet; then
+            echo "no_changes=true" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-sync reviews from blob"
+            git push origin main
+            echo "no_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Redeploy site (fresh reviews.json)
+        if: steps.commit.outputs.no_changes == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run "Deploy to GitHub Pages" --ref main
