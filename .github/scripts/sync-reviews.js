@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 
-const BLOB_URL = 'https://jsonblob.com/api/jsonBlob/019fdad6-c5fe-7536-81b2-2c77948dada4';
+const BLOB_URL = 'https://jsonblob.com/api/jsonBlob/019fe06e-27cb-74fe-a958-1fe784a4dbab';
 const REVIEWS_FILE = 'reviews.json';
 
 function fetchText(url) {
