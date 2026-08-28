@@ -1,0 +1,549 @@
+{
+  "generated": "2026-08-28T00:58:50.301Z",
+  "categories": [
+    "coffee",
+    "noncoffee"
+  ],
+  "products": [
+    {
+      "id": "spanish-latte",
+      "name": "Spanish Latte",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 0,
+      "imageKey": "spanish-latte",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "caramel-macchiato",
+      "name": "Caramel Macchiato",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 1,
+      "imageKey": "caramel-macchiato",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "caramel-latte",
+      "name": "Caramel Latte",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 2,
+      "imageKey": "caramel-latte",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "salted-caramel",
+      "name": "Salted Caramel",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 3,
+      "imageKey": "salted-caramel",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "french-vanilla",
+      "name": "French Vanilla",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 4,
+      "imageKey": "french-vanilla",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "dark-mocha",
+      "name": "Dark Mocha",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 5,
+      "imageKey": "dark-mocha",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "white-mocha",
+      "name": "White Mocha",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 6,
+      "imageKey": "white-mocha",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "biscoffee",
+      "name": "Biscoffee",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          119
+        ],
+        [
+          "22oz",
+          139
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 7,
+      "imageKey": "biscoffee",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "ice-latte",
+      "name": "Ice Latte",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 8,
+      "imageKey": "ice-latte",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "ice-americano",
+      "name": "Ice Americano",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          59
+        ],
+        [
+          "22oz",
+          79
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 9,
+      "imageKey": "ice-americano",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "nutella-latte",
+      "name": "Nutella Latte",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          99
+        ],
+        [
+          "22oz",
+          199
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 10,
+      "imageKey": "nutella-latte",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "ube-coffee-cloud",
+      "name": "Ube Coffee Cloud",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 11,
+      "imageKey": "ube-coffee-cloud",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "matcha-latte",
+      "name": "Matcha Latte",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 12,
+      "imageKey": "matcha-latte",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "biscoff-milk",
+      "name": "Biscoff Milk",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          119
+        ],
+        [
+          "22oz",
+          139
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 13,
+      "imageKey": "biscoff-milk",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "milky-oreo",
+      "name": "Milky Oreo",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 14,
+      "imageKey": "milky-oreo",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "chocolate-milk",
+      "name": "Chocolate Milk",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 15,
+      "imageKey": "chocolate-milk",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "strawberry-milk",
+      "name": "Strawberry Milk",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 16,
+      "imageKey": "strawberry-milk",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "the-milo-co",
+      "name": "The Milo Co.",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 17,
+      "imageKey": "the-milo-co",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "nutella-milk",
+      "name": "Nutella Milk",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          99
+        ],
+        [
+          "22oz",
+          199
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 18,
+      "imageKey": "nutella-milk",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    },
+    {
+      "id": "ube-cloud",
+      "name": "Ube Cloud",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 19,
+      "imageKey": "ube-cloud",
+      "createdAt": "2026-08-28T00:58:45.054Z",
+      "updatedAt": "2026-08-28T00:58:45.054Z"
+    }
+  ]
+}
