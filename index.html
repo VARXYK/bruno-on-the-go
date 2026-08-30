@@ -1308,7 +1308,7 @@ function renderMenuCards() {
     const badge = item.badge
       ? '<div class="best-badge"><span class="bs-star">\u2605</span> Best Seller</div>'
       : '';
-    const price = item.sizes.map(([s, v]) => s + ' ₱' + v).join('<br>');
+    const price = item.sizes.map(([size, price]) => size + ' ₱' + price).join('<br>');
     return '<div class="menu-card" data-cat="' + item.cat + '" style="--rd:' + (i * 55) + 'ms">' +
       '<div class="menu-img">' +
         '<img src="' + item.img + '" alt="' + item.name + '" loading="lazy">' + badge +
