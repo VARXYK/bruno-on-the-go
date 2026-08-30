@@ -24,13 +24,13 @@
       "oldPrice": "",
       "discount": "",
       "status": "active",
-      "badge": false,
+      "badge": true,
       "buttonText": "",
       "buttonLink": "",
       "sortOrder": 0,
       "imageKey": "spanish-latte",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:20:47.494Z"
     },
     {
       "id": "caramel-macchiato",
@@ -51,13 +51,13 @@
       "oldPrice": "",
       "discount": "",
       "status": "active",
-      "badge": false,
+      "badge": true,
       "buttonText": "",
       "buttonLink": "",
       "sortOrder": 1,
       "imageKey": "caramel-macchiato",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:20:47.495Z"
     },
     {
       "id": "caramel-latte",
@@ -159,13 +159,13 @@
       "oldPrice": "",
       "discount": "",
       "status": "active",
-      "badge": false,
+      "badge": true,
       "buttonText": "",
       "buttonLink": "",
       "sortOrder": 5,
       "imageKey": "dark-mocha",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:20:47.495Z"
     },
     {
       "id": "white-mocha",
@@ -230,11 +230,11 @@
       "sizes": [
         [
           "16oz",
-          89
+          79
         ],
         [
           "22oz",
-          109
+          99
         ]
       ],
       "oldPrice": "",
@@ -246,7 +246,7 @@
       "sortOrder": 8,
       "imageKey": "ice-latte",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:19:57.592Z"
     },
     {
       "id": "ice-americano",
@@ -288,7 +288,7 @@
         ],
         [
           "22oz",
-          199
+          119
         ]
       ],
       "oldPrice": "",
@@ -300,7 +300,7 @@
       "sortOrder": 10,
       "imageKey": "nutella-latte",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:19:57.593Z"
     },
     {
       "id": "ube-coffee-cloud",
@@ -348,13 +348,13 @@
       "oldPrice": "",
       "discount": "",
       "status": "active",
-      "badge": false,
+      "badge": true,
       "buttonText": "",
       "buttonLink": "",
       "sortOrder": 12,
       "imageKey": "matcha-latte",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:20:47.495Z"
     },
     {
       "id": "biscoff-milk",
@@ -365,23 +365,23 @@
       "sizes": [
         [
           "16oz",
-          119
+          99
         ],
         [
           "22oz",
-          139
+          119
         ]
       ],
       "oldPrice": "",
       "discount": "",
       "status": "active",
-      "badge": false,
+      "badge": true,
       "buttonText": "",
       "buttonLink": "",
       "sortOrder": 13,
       "imageKey": "biscoff-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:20:47.495Z"
     },
     {
       "id": "milky-oreo",
@@ -456,13 +456,13 @@
       "oldPrice": "",
       "discount": "",
       "status": "active",
-      "badge": false,
+      "badge": true,
       "buttonText": "",
       "buttonLink": "",
       "sortOrder": 16,
       "imageKey": "strawberry-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:20:47.495Z"
     },
     {
       "id": "the-milo-co",
@@ -504,7 +504,7 @@
         ],
         [
           "22oz",
-          199
+          119
         ]
       ],
       "oldPrice": "",
@@ -516,7 +516,7 @@
       "sortOrder": 18,
       "imageKey": "nutella-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-28T02:42:00.028Z"
+      "updatedAt": "2026-08-30T04:19:57.593Z"
     },
     {
       "id": "ube-cloud",
