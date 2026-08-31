@@ -330,6 +330,33 @@
       "updatedAt": "2026-08-28T02:42:00.028Z"
     },
     {
+      "id": "cinnamon-cream-latte",
+      "name": "Cinnamon Cream Latte",
+      "shortName": "",
+      "description": "",
+      "cat": "coffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 12,
+      "imageKey": "cinnamon-cream-latte",
+      "createdAt": "2026-08-31T11:27:51.623Z",
+      "updatedAt": "2026-08-31T11:27:51.623Z"
+    },
+    {
       "id": "matcha-latte",
       "name": "Matcha Latte",
       "shortName": "",
@@ -351,7 +378,7 @@
       "badge": true,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 12,
+      "sortOrder": 13,
       "imageKey": "matcha-latte",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-30T04:20:47.495Z"
@@ -365,11 +392,11 @@
       "sizes": [
         [
           "16oz",
-          99
+          119
         ],
         [
           "22oz",
-          119
+          139
         ]
       ],
       "oldPrice": "",
@@ -378,10 +405,10 @@
       "badge": true,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 13,
+      "sortOrder": 14,
       "imageKey": "biscoff-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
-      "updatedAt": "2026-08-30T04:20:47.495Z"
+      "updatedAt": "2026-08-31T11:27:51.622Z"
     },
     {
       "id": "milky-oreo",
@@ -405,7 +432,7 @@
       "badge": false,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 14,
+      "sortOrder": 15,
       "imageKey": "milky-oreo",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-28T02:42:00.028Z"
@@ -432,7 +459,7 @@
       "badge": false,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 15,
+      "sortOrder": 16,
       "imageKey": "chocolate-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-28T02:42:00.028Z"
@@ -459,7 +486,7 @@
       "badge": true,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 16,
+      "sortOrder": 17,
       "imageKey": "strawberry-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-30T04:20:47.495Z"
@@ -486,7 +513,7 @@
       "badge": false,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 17,
+      "sortOrder": 18,
       "imageKey": "the-milo-co",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-28T02:42:00.028Z"
@@ -513,7 +540,7 @@
       "badge": false,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 18,
+      "sortOrder": 19,
       "imageKey": "nutella-milk",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-30T04:19:57.593Z"
@@ -540,10 +567,64 @@
       "badge": false,
       "buttonText": "",
       "buttonLink": "",
-      "sortOrder": 19,
+      "sortOrder": 20,
       "imageKey": "ube-cloud",
       "createdAt": "2026-08-28T00:58:45.054Z",
       "updatedAt": "2026-08-28T02:42:00.028Z"
+    },
+    {
+      "id": "milky-mango",
+      "name": "Milky Mango",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 21,
+      "imageKey": "milky-mango",
+      "createdAt": "2026-08-31T11:27:51.623Z",
+      "updatedAt": "2026-08-31T11:27:51.623Z"
+    },
+    {
+      "id": "milky-blueberry",
+      "name": "Milky Blueberry",
+      "shortName": "",
+      "description": "",
+      "cat": "noncoffee",
+      "sizes": [
+        [
+          "16oz",
+          89
+        ],
+        [
+          "22oz",
+          109
+        ]
+      ],
+      "oldPrice": "",
+      "discount": "",
+      "status": "active",
+      "badge": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "sortOrder": 22,
+      "imageKey": "milky-blueberry",
+      "createdAt": "2026-08-31T11:27:51.623Z",
+      "updatedAt": "2026-08-31T11:27:51.623Z"
     }
   ],
   "imageMeta": [
@@ -588,7 +669,8 @@
       "idx": 9
     },
     {
-      "kind": "base64",
+      "kind": "path",
+      "src": "bruno-images/nutella-latte.png",
       "idx": 10
     },
     {
@@ -596,7 +678,8 @@
       "idx": 11
     },
     {
-      "kind": "base64",
+      "kind": "path",
+      "src": "bruno-images/cinnamon-cream-latte.png",
       "idx": 12
     },
     {
@@ -608,28 +691,42 @@
       "idx": 14
     },
     {
-      "kind": "path",
-      "src": "bruno-images/nutella-latte.png",
+      "kind": "base64",
       "idx": 15
     },
     {
       "kind": "path",
-      "src": "bruno-images/ube-coffee-cloud.png",
+      "src": "bruno-images/nutella-latte.png",
       "idx": 16
     },
     {
-      "kind": "base64",
+      "kind": "path",
+      "src": "bruno-images/ube-coffee-cloud.png",
       "idx": 17
     },
     {
-      "kind": "path",
-      "src": "bruno-images/nutella-milk.png",
+      "kind": "base64",
       "idx": 18
     },
     {
       "kind": "path",
-      "src": "bruno-images/ube-cloud.png",
+      "src": "bruno-images/nutella-milk.png",
       "idx": 19
+    },
+    {
+      "kind": "path",
+      "src": "bruno-images/ube-cloud.png",
+      "idx": 20
+    },
+    {
+      "kind": "path",
+      "src": "bruno-images/milky-mango.png",
+      "idx": 21
+    },
+    {
+      "kind": "path",
+      "src": "bruno-images/milky-blueberry.png",
+      "idx": 22
     }
   ]
 }
